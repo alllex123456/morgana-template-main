@@ -8,7 +8,7 @@ export default function Header({
   logoImgParam,
   linksParam,
   themeParam,
-  button,
+  buttonParam,
 }) {
   let logoImg = logoImgParam ? logoImgParam : DefaultLogo; //
   let links = linksParam
@@ -23,7 +23,7 @@ export default function Header({
           href: '#despre',
         },
       ];
-  // let ButtonEl = buttonParam ? buttonParam.item :DefaultButton - nu inteleg, butonul ca parametru e trecut "button"
+
   let theme = themeParam ? themeParam : defaultTheme;
   return (
     <motion.header
@@ -55,8 +55,8 @@ export default function Header({
         })}
       </nav>
 
-      {button ? (
-        <button.item className="hero_button" {...button.props} />
+      {buttonParam ? (
+        <buttonParam.item className="hero_button" {...buttonParam.props} />
       ) : (
         <DefaultButton />
       )}

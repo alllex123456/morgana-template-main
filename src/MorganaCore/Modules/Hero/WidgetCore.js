@@ -50,7 +50,10 @@ const WidgetCore = ({
         <button.item {...button.props} />
       </div>
 
-      <img className="hero_img--main" src={imageParam.main}></img>
+      <div className="hero_img--container">
+        <img className="hero_img--background" src={imageParam.background} />
+        <img className="hero_img--primary" src={imageParam.primary} />
+      </div>
     </motion.div>
   );
 };

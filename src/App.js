@@ -4,7 +4,6 @@ import Header from './MorganaCore/Modules/Header/WidgetCore';
 import Hero from './MorganaCore/Modules/Hero/WidgetCore';
 import { Theme } from './MorganaCore/theme';
 import Button_1 from './MorganaCore/Atoms/Button_1';
-import Button_2 from './MorganaCore/Atoms/Button_2';
 
 const customTheme = new Theme();
 customTheme.initFonts(`'DM Serif Display', serif`, `'Ubuntu', sans-serif`);
@@ -12,10 +11,13 @@ customTheme.initColors('#8abcd7', '#ecf8ff', '#ffffff', '#13122F');
 
 const reuseItems = {
   button_1: Button_1,
-  button_2: Button_2,
 };
 
-let images = { hero: { ref: 'main', location: '/img-hero.jpg', alt: '' } };
+let images = [
+  '/images/hero-primary.png',
+  '/images/image-back-dots.png',
+  '/images/loader.jpg',
+];
 
 const Home = () => {
   return (
@@ -37,17 +39,19 @@ const Home = () => {
             href: '#servicii',
           },
         ]}
-        button={{
+        buttonParam={{
           item: reuseItems.button_1,
           props: {
             textParam: 'Contactează-mă',
-            bgColorParam: 'transparent',
-            paddingParam: '2rem 3rem',
-            fontSizeParam: '2rem',
-            fontWeightParam: '600',
-            borderRadiusParam: '2rem',
-            borderParam: `2px solid ${customTheme.colors.color_10}`,
-            colorParam: customTheme.colors.color_10,
+            customStyle: {
+              backgroundColor: 'transparent',
+              padding: '2rem 3rem',
+              fontSizeParam: '1.8rem',
+              fontWeight: '600',
+              borderRadius: '2rem',
+              border: `2px solid ${customTheme.colors.color_10}`,
+              color: customTheme.colors.color_10,
+            },
           },
         }}
       />
@@ -58,20 +62,24 @@ Parentală"
         textParam="Totul începe cu o idee. Poate vrei să lansezi o afacere. Poate vrei să transformi un hobby
 în ceva mai mult. Sau poate ai un moment în care vrei să-ți reproiectezi cariera."
         imageParam={{
-          main: '/img-hero.jpg',
+          primary: images[0],
+          background: images[1],
+          loader: images[2],
         }}
         buttonParam={{
-          item: reuseItems.button_2,
+          item: reuseItems.button_1,
           props: {
             textParam: 'Rezervă',
-            bgColorParam: customTheme.colors.color_10,
-            paddingParam: '2rem 3rem',
-            fontSizeParam: '1.8rem',
-            fontWeightParam: '600',
-            borderRadiusParam: '2rem',
-            colorParam: customTheme.colors.color_60,
-            marginParam: '4rem 0',
-            widthParam: '20rem',
+            customStyle: {
+              backgroundColor: customTheme.colors.color_10,
+              padding: '2rem 3rem',
+              fontSize: '1.8rem',
+              fontWeight: '600',
+              borderRadius: '2rem',
+              color: customTheme.colors.color_60,
+              margin: '4rem 0',
+              width: '20rem',
+            },
           },
         }}
       />
