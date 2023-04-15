@@ -19,6 +19,13 @@ const WidgetCore = ({
   return (
     <motion.div
       className="hero"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        default: {
+          duration: 1,
+        },
+      }}
       style={{
         backgroundColor: theme.colors.color_60,
       }}
