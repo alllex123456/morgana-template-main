@@ -1,3 +1,7 @@
+/* font-family: 'DM Serif Display', serif;
+font-family: 'Ubuntu', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Ubuntu:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +10,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,6 +34,45 @@ a {
   text-decoration: none;
 }
 
-/* font-family: 'DM Serif Display', serif;
-font-family: 'Ubuntu', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Ubuntu:wght@300&display=swap');
+.section {
+  padding: 10rem 8rem;
+}
+
+.section_img--container {
+  height: 70rem;
+  position: relative;
+}
+
+.section_img--primary {
+  position: relative;
+  height: 100%;
+}
+
+.section_img--background {
+  height: 45rem;
+  position: absolute;
+  top: 2rem;
+  left: 3.2rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+@media (max-width: 50em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 50em) {
+  .section_img--container {
+    height: 50rem;
+  }
+
+  .section_img--background {
+    height: 30rem;
+    top: 2rem;
+    left: 2rem;
+  }
+}

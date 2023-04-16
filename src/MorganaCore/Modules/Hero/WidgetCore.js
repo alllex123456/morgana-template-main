@@ -18,7 +18,8 @@ const WidgetCore = ({
 
   return (
     <motion.div
-      className="hero"
+      id="acasa"
+      className="section hero"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
@@ -28,17 +29,18 @@ const WidgetCore = ({
       }}
       style={{
         backgroundColor: theme.colors.color_60,
+        color: theme.colors.font_dark,
       }}
     >
       <div className="hero_text">
-        <h3
+        <h1
           className="hero_title"
           style={{
             fontFamily: theme.fonts.title,
           }}
         >
           {title}
-        </h3>
+        </h1>
         <p
           className="hero_content"
           style={{
@@ -50,9 +52,19 @@ const WidgetCore = ({
         <button.item {...button.props} />
       </div>
 
-      <div className="hero_img--container">
-        <img className="hero_img--background" src={imageParam.background} />
-        <img className="hero_img--primary" src={imageParam.primary} />
+      <div className="section_img--container">
+        <img className="section_img--background" src={imageParam.background} />
+        <img className="section_img--primary" src={imageParam.primary} />
+        <div
+          className="hero_img--foreground"
+          style={{ background: theme.colors.color_60 }}
+        >
+          <div className="hero_img--foreground_loader">
+            <img src={imageParam.loader} alt="" />
+            <span>98%</span>
+          </div>
+          <p>Success</p>
+        </div>
       </div>
     </motion.div>
   );

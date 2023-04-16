@@ -1,0 +1,10 @@
+.offer_main {
+  padding: 4rem;
+  text-align: center;
+}
+
+.offer_main h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
