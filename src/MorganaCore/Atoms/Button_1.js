@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Button_1({ textParam, customStyle, onClick }) {
+const Button_1 = ({ textParam, customStyle, onClick }) => {
   let text = textParam ? textParam : 'default';
 
   return (
@@ -8,4 +8,6 @@ export default function Button_1({ textParam, customStyle, onClick }) {
       {text}
     </button>
   );
-}
+};
+
+export default Button_1;

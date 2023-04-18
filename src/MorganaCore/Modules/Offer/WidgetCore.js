@@ -8,10 +8,15 @@ const WidgetCore = ({
   titleParam,
   textParam,
   cardParam,
-  imageParam,
   buttonParam,
+  imageParam,
 }) => {
   let theme = themeParam ? themeParam : defaultTheme;
+  let title = titleParam ? titleParam : 'Default Title';
+  let text = textParam ? textParam : 'Default text';
+  let card = cardParam ? cardParam : {};
+  let button = buttonParam ? buttonParam : <DefaultButton />;
+  let image = imageParam ? imageParam : {};
 
   return (
     <motion.header
@@ -28,6 +33,7 @@ const WidgetCore = ({
         color: theme.colors.font_dark,
       }}
     >
+      <img className="background-image" src={image.background} alt="" />
       <div
         className="offer_main"
         style={{
@@ -39,15 +45,47 @@ const WidgetCore = ({
             fontFamily: theme.fonts.title,
           }}
         >
-          {titleParam}
+          {title}
         </h3>
         <p
           style={{
             fontFamily: theme.fonts.content,
           }}
         >
-          {textParam}
+          {text}
         </p>
+      </div>
+      <div className="offer_cards">
+        <div
+          className="offer_cards--card"
+          style={{ background: theme.colors.color_10 }}
+        >
+          <div>
+            <img
+              style={{ background: theme.colors.color_30 }}
+              src={card.cardIcon1}
+              alt=""
+            />
+            <h3>{card.cardTitle1}</h3>
+          </div>
+          <p>{card.cardText1}</p>
+          <button.item {...button.props} />
+        </div>
+        <div
+          className="offer_cards--card"
+          style={{ background: theme.colors.color_10 }}
+        >
+          <div>
+            <img
+              style={{ background: theme.colors.color_30 }}
+              src={card.cardIcon2}
+              alt=""
+            />
+            <h3>{card.cardTitle2}</h3>
+          </div>
+          <p>{card.cardText2}</p>
+          <button.item {...button.props} />
+        </div>
       </div>
     </motion.header>
   );

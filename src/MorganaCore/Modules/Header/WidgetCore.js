@@ -15,7 +15,7 @@ export default function Header({
 }) {
   const location = useLocation();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  let logoImg = logoImgParam ? logoImgParam : DefaultLogo; //
+  let logoImg = logoImgParam ? logoImgParam : DefaultLogo;
   let links = linksParam
     ? linksParam
     : [

@@ -14,7 +14,7 @@ const WidgetCore = ({
   let theme = themeParam ? themeParam : defaultTheme;
   let title = titleParam ? titleParam : 'Default Title';
   let text = textParam ? textParam : 'Default text';
-  let button = buttonParam ? buttonParam : '<DefaultButton />';
+  let button = buttonParam ? buttonParam : <DefaultButton />;
 
   return (
     <motion.div
@@ -53,8 +53,12 @@ const WidgetCore = ({
       </div>
 
       <div className="section_img--container">
-        <img className="section_img--background" src={imageParam.background} />
-        <img className="section_img--primary" src={imageParam.primary} />
+        <img
+          className="section_img--background"
+          src={imageParam.background}
+          alt=""
+        />
+        <img className="section_img--primary" src={imageParam.primary} alt="" />
         <div
           className="hero_img--foreground"
           style={{ background: theme.colors.color_60 }}

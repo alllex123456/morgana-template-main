@@ -4,6 +4,9 @@ import Header from './MorganaCore/Modules/Header/WidgetCore';
 import Hero from './MorganaCore/Modules/Hero/WidgetCore';
 import About from './MorganaCore/Modules/About/WidgetCore';
 import Offer from './MorganaCore/Modules/Offer/WidgetCore';
+import Reviews from './MorganaCore/Modules/Reviews/WidgetCore';
+import Footer from './MorganaCore/Modules/Footer/WidgetCore';
+
 import { Theme } from './MorganaCore/theme';
 import Button_1 from './MorganaCore/Atoms/Button_1';
 
@@ -22,8 +25,11 @@ let images = [
   '/images/loader.jpg',
   '/images/african-american-business-woman.png',
   '/images/section-back-dots.png',
-  '/images/family 1.png',
   '/images/mental-health 1.png',
+  '/images/family 1.png',
+  'images/chichi.png',
+  'images/rita.jpg',
+  'images/gloria.jpg',
 ];
 
 const Home = () => {
@@ -108,6 +114,8 @@ Parentală"
         titleParam="Cu ce te pot ajuta"
         textParam="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et hendrerit in, accumsan tempus"
         cardParam={{
+          cardIcon1: images[6],
+          cardIcon2: images[7],
           cardTitle1: 'Coaching',
           cardTitle2: 'Consiliere parentală',
           cardText1:
@@ -115,26 +123,98 @@ Parentală"
           cardText2:
             'Te voi ajuta să creezi o relație psihologică și emoțională sănătoasă cu copilul tău pe baza modelelor parentale dezvoltate și testate de-a lungul anilor de cei mai cunoscuți psihoterapeuți din România, pentru a obține un spațiu de dezvoltare sigur, sănătos, armonios pentru copilul tău și pentru întreaga familie.',
         }}
-        imageParam={{
-          primary: images[6],
-          background: images[7],
-        }}
         buttonParam={{
           item: reuseItems.button_1,
           props: {
             textParam: 'Mai multe',
             customStyle: {
               backgroundColor: customTheme.colors.color_60,
-              padding: '2rem 3rem',
-              fontSize: '1.8rem',
+              padding: '1.5rem 3rem',
+              fontSize: '1.6rem',
               fontWeight: '600',
-              borderRadius: '2rem',
-              color: customTheme.colors.color_30,
-              margin: '4rem 0',
-              width: '20rem',
+              borderRadius: '1.5rem',
+              color: customTheme.colors.color_10,
+              margin: '0',
+              width: 'max-content',
             },
           },
         }}
+        imageParam={{ background: images[5] }}
+      />
+      <Reviews
+        themeParam={customTheme}
+        titleParam="Clienți"
+        cardsParam={[
+          {
+            image: images[8],
+            name: 'Chichi',
+            country: 'South Africa',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et',
+          },
+          {
+            image: images[9],
+            name: 'Queen Rita',
+            country: 'USA',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et',
+          },
+          {
+            image: images[10],
+            name: 'Gloria Uko',
+            country: 'Nigeria',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et',
+          },
+        ]}
+      />
+      <Footer
+        themeParam={customTheme}
+        imageParam={images[0]}
+        iconsParam={[
+          {
+            label: 'Twitter',
+            href: 'www.twitter.com',
+            img: '/images/Vector.png',
+          },
+          {
+            label: 'Instagram',
+            href: 'www.instagram.com',
+            img: '/images/Vector (1).png',
+          },
+          {
+            label: 'Facebook',
+            href: 'www.facebook.com',
+            img: '/images/Vector (2).png',
+          },
+          {
+            label: 'LinkedIn',
+            href: 'www.linkedin.com',
+            img: '/images/Vector (3).png',
+          },
+        ]}
+        addressParam="88/89 Peter Odili Road, Port Harcourt, Rivers State"
+        linksParam={[
+          {
+            title: 'Acasă',
+            href: '/',
+          },
+          {
+            title: 'Despre',
+            href: '#despre',
+          },
+          {
+            title: 'Servicii',
+            href: '/servicii',
+          },
+          {
+            title: 'Contact',
+            href: '/contact',
+          },
+          {
+            title: 'Privacy policy',
+            href: '/privacy',
+          },
+        ]}
+        copyrightParam="© MindCon. All right reserved"
+        textParam="Conectează-te cu mine"
       />
     </>
   );

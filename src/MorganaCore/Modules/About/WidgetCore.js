@@ -6,7 +6,7 @@ import { defaultTheme } from '../../theme';
 
 const WidgetCore = ({ themeParam, titleParam, textParam, imageParam }) => {
   let theme = themeParam ? themeParam : defaultTheme;
-  let title = titleParam ? titleParam : 'default';
+  let title = titleParam ? titleParam : 'Default Title';
   let text = textParam ? textParam : {};
 
   return (
