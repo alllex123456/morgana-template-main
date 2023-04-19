@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DotsThreeCircle, XCircle } from '@phosphor-icons/react';
 import { NavHashLink } from 'react-router-hash-link';
@@ -14,6 +14,7 @@ export default function Header({
   buttonParam,
 }) {
   const location = useLocation();
+  const navigator = useNavigate();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   let logoImg = logoImgParam ? logoImgParam : DefaultLogo;
   let links = linksParam
@@ -55,22 +56,6 @@ export default function Header({
         },
       },
     },
-  };
-
-  const isActive = (el) => {
-    let isActive;
-    if (location.hash) {
-      isActive = location.hash === el.href;
-    } else {
-      isActive = location.pathname === el.href;
-    }
-    return isActive
-      ? {
-          color: theme.colors.font_dark,
-          fontWeight: 700,
-          borderBottom: '2px solid currentColor',
-        }
-      : { color: theme.colors.font_dark };
   };
 
   return (
@@ -118,27 +103,37 @@ export default function Header({
                 }}
                 onClick={() => setMobileNavOpen(false)}
               />
-              {links.map((el, index) => {
+              {links.map((el, index, array) => {
+                if (index === array.length - 1) {
+                  return buttonParam ? (
+                    <buttonParam.item
+                      key={index}
+                      className="hero_button"
+                      onClick={() => {
+                        setMobileNavOpen(false);
+                        navigator(el.href);
+                      }}
+                      {...buttonParam.props}
+                    />
+                  ) : (
+                    <DefaultButton />
+                  );
+                }
                 return (
                   <NavHashLink
                     to={el.href}
                     key={index}
-                    style={() => isActive(el)}
+                    activeStyle={{
+                      color: theme.colors.font_dark,
+                      fontWeight: 700,
+                      borderBottom: '2px solid currentColor',
+                    }}
                     onClick={() => setMobileNavOpen(false)}
                   >
                     {el.title}
                   </NavHashLink>
                 );
               })}
-              {buttonParam ? (
-                <buttonParam.item
-                  className="hero_button"
-                  onClick={() => setMobileNavOpen(false)}
-                  {...buttonParam.props}
-                />
-              ) : (
-                <DefaultButton />
-              )}
             </motion.nav>
           )}
         </AnimatePresence>
@@ -155,20 +150,41 @@ export default function Header({
         <img className="header_logo" src={logoImg} alt="" />
 
         <nav className="header_nav">
-          {links.map((el, index) => {
+          {links.map((el, index, array) => {
+            if (index === array.length - 1) {
+              return buttonParam ? (
+                <buttonParam.item
+                  key={index}
+                  className="hero_button"
+                  onClick={() => {
+                    setMobileNavOpen(false);
+                    navigator(el.href);
+                  }}
+                  {...buttonParam.props}
+                />
+              ) : (
+                <DefaultButton />
+              );
+            }
             return (
-              <NavHashLink to={el.href} key={index} style={() => isActive(el)}>
+              <NavHashLink
+                to={el.href}
+                key={index}
+                style={{
+                  color: theme.colors.font_dark,
+                }}
+                activeStyle={{
+                  color: theme.colors.font_dark,
+                  fontWeight: 700,
+                  borderBottom: '2px solid currentColor',
+                }}
+                onClick={() => setMobileNavOpen(false)}
+              >
                 {el.title}
               </NavHashLink>
             );
           })}
         </nav>
-
-        {buttonParam ? (
-          <buttonParam.item className="hero_button" {...buttonParam.props} />
-        ) : (
-          <DefaultButton />
-        )}
       </motion.header>
     </React.Fragment>
   );

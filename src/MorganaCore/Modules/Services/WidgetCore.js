@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { defaultTheme } from '../../theme';
 import './style.css';
@@ -7,20 +8,22 @@ const WidgetCore = ({
   themeParam,
   titleParam,
   textParam,
-  cardParam,
+  cardsParam,
   buttonParam,
   imageParam,
 }) => {
+  const navigator = useNavigate();
+
   let theme = themeParam ? themeParam : defaultTheme;
   let title = titleParam ? titleParam : 'Default Title';
   let text = textParam ? textParam : 'Default text';
-  let card = cardParam ? cardParam : {};
+  let cards = cardsParam ? cardsParam : [];
   let button = buttonParam ? buttonParam : <DefaultButton />;
   let image = imageParam ? imageParam : {};
 
   return (
     <motion.header
-      id="despre"
+      id="servicii"
       className="section offer"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -56,36 +59,27 @@ const WidgetCore = ({
         </p>
       </div>
       <div className="offer_cards">
-        <div
-          className="offer_cards--card"
-          style={{ background: theme.colors.color_10 }}
-        >
-          <div>
-            <img
-              style={{ background: theme.colors.color_30 }}
-              src={card.cardIcon1}
-              alt=""
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="offer_cards--card"
+            style={{ background: theme.colors.color_10 }}
+          >
+            <div>
+              <img
+                style={{ background: theme.colors.color_30 }}
+                src={card.icon}
+                alt=""
+              />
+              <h3>{card.title}</h3>
+            </div>
+            <p>{card.text}</p>
+            <button.item
+              {...button.props}
+              onClick={() => navigator(card.route)}
             />
-            <h3>{card.cardTitle1}</h3>
           </div>
-          <p>{card.cardText1}</p>
-          <button.item {...button.props} />
-        </div>
-        <div
-          className="offer_cards--card"
-          style={{ background: theme.colors.color_10 }}
-        >
-          <div>
-            <img
-              style={{ background: theme.colors.color_30 }}
-              src={card.cardIcon2}
-              alt=""
-            />
-            <h3>{card.cardTitle2}</h3>
-          </div>
-          <p>{card.cardText2}</p>
-          <button.item {...button.props} />
-        </div>
+        ))}
       </div>
     </motion.header>
   );

@@ -1,0 +1,43 @@
+.coaching {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.coaching_text {
+  width: 50%;
+  font-size: 2rem;
+}
+
+.coaching_title {
+  font-size: 8rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+}
+
+.coaching_content {
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.coaching_content:last-child {
+  margin-top: 6rem;
+}
+
+.coaching .section_img--background {
+  left: 2.5rem;
+  top: 2rem;
+}
+
+@media (max-width: 93.75em) {
+  .coaching {
+    justify-content: center;
+    text-align: center;
+  }
+  .coaching_text {
+    width: 100%;
+  }
+}

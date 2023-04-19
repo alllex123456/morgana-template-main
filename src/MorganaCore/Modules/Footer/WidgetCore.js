@@ -4,6 +4,7 @@ import { defaultTheme } from '../../theme';
 
 import './style.css';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const WidgetCore = ({
   themeParam,
@@ -45,7 +46,7 @@ const WidgetCore = ({
         </div>
         <div className="footer_links--nav">
           {links.slice(0, 2).map((link, index) => (
-            <Link
+            <HashLink
               key={index}
               to={link.href}
               style={{
@@ -53,12 +54,12 @@ const WidgetCore = ({
               }}
             >
               {link.title}
-            </Link>
+            </HashLink>
           ))}
         </div>
         <div className="footer_links--nav">
           {links.slice(2).map((link, index) => (
-            <Link
+            <HashLink
               key={index}
               to={link.href}
               style={{
@@ -66,7 +67,7 @@ const WidgetCore = ({
               }}
             >
               {link.title}
-            </Link>
+            </HashLink>
           ))}
         </div>
         <div className="footer_links--social">

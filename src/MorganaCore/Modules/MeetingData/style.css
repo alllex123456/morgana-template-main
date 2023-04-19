@@ -1,0 +1,31 @@
+.meeting {
+  text-align: center;
+}
+
+.meeting_data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.meeting_data > * {
+  flex: 0 0 30rem;
+}
+
+.meeting_slice > p {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.meeting_slice > p:last-child {
+  font-weight: 400;
+}
+
+@media (max-width: 62.5em) {
+  .meeting_data {
+    justify-content: center;
+  }
+}
