@@ -39,7 +39,7 @@ const WidgetCore = ({
         <button.item {...button.props} />
       </div>
 
-      <div className="section_img--container">
+      <div className="section_img--container hero_img--container">
         <img
           className="section_img--background"
           src={imageParam.background}
