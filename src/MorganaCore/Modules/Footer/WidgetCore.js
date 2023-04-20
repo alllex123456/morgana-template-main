@@ -71,7 +71,7 @@ const WidgetCore = ({
           <p>{text}</p>
           <div className="footer_links--social_icons">
             {icons.map((icon, index) => (
-              <Link key={index} to={icon.href}>
+              <Link key={index} to={icon.href} target="_blank">
                 <img src={icon.img} alt={icon.label} />
               </Link>
             ))}

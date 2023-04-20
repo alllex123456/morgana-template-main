@@ -407,22 +407,22 @@ function App() {
         iconsParam={[
           {
             label: 'Twitter',
-            href: 'www.twitter.com',
+            href: 'http://www.twitter.com',
             img: '/images/Vector.png',
           },
           {
             label: 'Instagram',
-            href: 'www.instagram.com',
+            href: 'http://www.instagram.com',
             img: '/images/Vector (1).png',
           },
           {
             label: 'Facebook',
-            href: 'www.facebook.com',
+            href: 'http://www.facebook.com',
             img: '/images/Vector (2).png',
           },
           {
             label: 'LinkedIn',
-            href: 'www.linkedin.com',
+            href: 'http://www.linkedin.com',
             img: '/images/Vector (3).png',
           },
         ]}
