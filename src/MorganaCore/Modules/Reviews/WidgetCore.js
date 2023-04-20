@@ -10,19 +10,12 @@ const WidgetCore = ({ themeParam, titleParam, cardsParam }) => {
   let cards = cardsParam ? cardsParam : [];
 
   return (
-    <motion.div
-      id="despre"
+    <div
       className="section reviews"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        default: {
-          duration: 1,
-        },
-      }}
       style={{
         color: theme.colors.font_dark,
         backgroundColor: theme.colors.color_30,
+        fontFamily: theme.fonts.content,
       }}
     >
       <h2
@@ -48,21 +41,12 @@ const WidgetCore = ({ themeParam, titleParam, cardsParam }) => {
                 <p>{card.name}</p>
                 <p>{card.country}</p>
               </div>
-              {/* <p
-                style={{
-                  color: theme.colors.color_60,
-                  fontFamily: theme.fonts.title,
-                }}
-                className="card_comma"
-              >
-                "
-              </p> */}
             </div>
             <p className="card_text">{card.text}</p>
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

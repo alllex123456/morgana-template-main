@@ -9,6 +9,8 @@ import Footer from './MorganaCore/Modules/Footer/WidgetCore';
 import Coaching from './MorganaCore/Modules/Coaching/WidgetCore';
 import Parenting from './MorganaCore/Modules/Parenting/WidgetCore';
 import MeetingData from './MorganaCore/Modules/MeetingData/WidgetCore';
+import Form from './MorganaCore/Modules/Form/WidgetCore';
+import Location from './MorganaCore/Modules/Location/WidgetCore';
 
 import { Theme } from './MorganaCore/theme';
 import Button_1 from './MorganaCore/Atoms/Button_1';
@@ -38,43 +40,6 @@ let images = [
 const Home = () => {
   return (
     <>
-      <Header
-        themeParam={customTheme}
-        logoImgParam={images[0]}
-        linksParam={[
-          {
-            title: 'Acasă',
-            href: '/#',
-          },
-          {
-            title: 'Despre',
-            href: '/#despre',
-          },
-          {
-            title: 'Servicii',
-            href: '/#servicii',
-          },
-          {
-            title: 'Contactează-mă',
-            href: '/contact',
-          },
-        ]}
-        buttonParam={{
-          item: reuseItems.button_1,
-          props: {
-            textParam: 'Contactează-mă',
-            customStyle: {
-              backgroundColor: 'transparent',
-              padding: '2rem 3rem',
-              fontSizeParam: '1.8rem',
-              fontWeight: '600',
-              borderRadius: '2rem',
-              border: `2px solid ${customTheme.colors.color_10}`,
-              color: customTheme.colors.color_10,
-            },
-          },
-        }}
-      />
       <Hero
         themeParam={customTheme}
         titleParam="Coaching și Consiliere
@@ -106,11 +71,11 @@ Parentală"
       <About
         themeParam={customTheme}
         titleParam="Eu sunt Cezara"
-        textParam={{
-          p1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et hendrerit in, accumsan tempus erat.',
-          p2: 'Nullam ornare blandit urna, eu pulvinar elit faucibus eget. Sed justo mauris, ultricies euurna at, gravida commodo mauris. Quisque ac felis ac sapien dictum gravida aliquet acpurus. Donec sit amet ex vel ex sollicitudin posuere at et metus. Duis sodales ligula nisi, molestie lacinia ex rhoncus vel.',
-          p3: 'Nullam ornare blandit urna, eu pulvinar elit faucibus eget. Sed justo mauris, ultricies euurna at, gravida commodo mauris. Quisque ac felis ac sapien dictum gravida aliquet acpurus. Donec sit amet ex vel ex sollicitudin posuere at et metus. Duis sodales ligula nisi, molestie lacinia ex rhoncus vel.',
-        }}
+        textParam={[
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur justo quis euismod vehicula. Quisque diam dui, imperdiet et hendrerit in, accumsan tempus erat.',
+          'Nullam ornare blandit urna, eu pulvinar elit faucibus eget. Sed justo mauris, ultricies euurna at, gravida commodo mauris. Quisque ac felis ac sapien dictum gravida aliquet acpurus. Donec sit amet ex vel ex sollicitudin posuere at et metus. Duis sodales ligula nisi, molestie lacinia ex rhoncus vel.',
+          'Nullam ornare blandit urna, eu pulvinar elit faucibus eget. Sed justo mauris, ultricies euurna at, gravida commodo mauris. Quisque ac felis ac sapien dictum gravida aliquet acpurus. Donec sit amet ex vel ex sollicitudin posuere at et metus. Duis sodales ligula nisi, molestie lacinia ex rhoncus vel.',
+        ]}
         imageParam={{
           primary: images[4],
           background: images[5],
@@ -176,57 +141,6 @@ Parentală"
           },
         ]}
       />
-      <Footer
-        themeParam={customTheme}
-        imageParam={images[0]}
-        iconsParam={[
-          {
-            label: 'Twitter',
-            href: 'www.twitter.com',
-            img: '/images/Vector.png',
-          },
-          {
-            label: 'Instagram',
-            href: 'www.instagram.com',
-            img: '/images/Vector (1).png',
-          },
-          {
-            label: 'Facebook',
-            href: 'www.facebook.com',
-            img: '/images/Vector (2).png',
-          },
-          {
-            label: 'LinkedIn',
-            href: 'www.linkedin.com',
-            img: '/images/Vector (3).png',
-          },
-        ]}
-        addressParam="88/89 Peter Odili Road, Port Harcourt, Rivers State"
-        linksParam={[
-          {
-            title: 'Acasă',
-            href: '/#',
-          },
-          {
-            title: 'Despre',
-            href: '/#despre',
-          },
-          {
-            title: 'Servicii',
-            href: '/#servicii',
-          },
-          {
-            title: 'Contact',
-            href: '/contact',
-          },
-          {
-            title: 'Privacy policy',
-            href: '/privacy',
-          },
-        ]}
-        copyrightParam="© MindCon. All right reserved"
-        textParam="Conectează-te cu mine"
-      />
     </>
   );
 };
@@ -234,43 +148,6 @@ Parentală"
 const CoachingServices = () => {
   return (
     <>
-      <Header
-        themeParam={customTheme}
-        logoImgParam={images[0]}
-        linksParam={[
-          {
-            title: 'Acasă',
-            href: '/#',
-          },
-          {
-            title: 'Despre',
-            href: '/#despre',
-          },
-          {
-            title: 'Servicii',
-            href: '/#servicii',
-          },
-          {
-            title: 'Contactează-mă',
-            href: '/contact',
-          },
-        ]}
-        buttonParam={{
-          item: reuseItems.button_1,
-          props: {
-            textParam: 'Contactează-mă',
-            customStyle: {
-              backgroundColor: 'transparent',
-              padding: '2rem 3rem',
-              fontSizeParam: '1.8rem',
-              fontWeight: '600',
-              borderRadius: '2rem',
-              border: `2px solid ${customTheme.colors.color_10}`,
-              color: customTheme.colors.color_10,
-            },
-          },
-        }}
-      />
       <Coaching
         themeParam={customTheme}
         titleParam="Coaching"
@@ -322,58 +199,6 @@ const CoachingServices = () => {
           },
         ]}
       />
-
-      <Footer
-        themeParam={customTheme}
-        imageParam={images[0]}
-        iconsParam={[
-          {
-            label: 'Twitter',
-            href: 'www.twitter.com',
-            img: '/images/Vector.png',
-          },
-          {
-            label: 'Instagram',
-            href: 'www.instagram.com',
-            img: '/images/Vector (1).png',
-          },
-          {
-            label: 'Facebook',
-            href: 'www.facebook.com',
-            img: '/images/Vector (2).png',
-          },
-          {
-            label: 'LinkedIn',
-            href: 'www.linkedin.com',
-            img: '/images/Vector (3).png',
-          },
-        ]}
-        addressParam="88/89 Peter Odili Road, Port Harcourt, Rivers State"
-        linksParam={[
-          {
-            title: 'Acasă',
-            href: '/#',
-          },
-          {
-            title: 'Despre',
-            href: '/#despre',
-          },
-          {
-            title: 'Servicii',
-            href: '/#servicii',
-          },
-          {
-            title: 'Contact',
-            href: '/contact',
-          },
-          {
-            title: 'Privacy policy',
-            href: '/privacy',
-          },
-        ]}
-        copyrightParam="© MindCon. All right reserved"
-        textParam="Conectează-te cu mine"
-      />
     </>
   );
 };
@@ -381,43 +206,6 @@ const CoachingServices = () => {
 const ParentingServices = () => {
   return (
     <>
-      <Header
-        themeParam={customTheme}
-        logoImgParam={images[0]}
-        linksParam={[
-          {
-            title: 'Acasă',
-            href: '/#',
-          },
-          {
-            title: 'Despre',
-            href: '/#despre',
-          },
-          {
-            title: 'Servicii',
-            href: '/#servicii',
-          },
-          {
-            title: 'Contactează-mă',
-            href: '/contact',
-          },
-        ]}
-        buttonParam={{
-          item: reuseItems.button_1,
-          props: {
-            textParam: 'Contactează-mă',
-            customStyle: {
-              backgroundColor: 'transparent',
-              padding: '2rem 3rem',
-              fontSizeParam: '1.8rem',
-              fontWeight: '600',
-              borderRadius: '2rem',
-              border: `2px solid ${customTheme.colors.color_10}`,
-              color: customTheme.colors.color_10,
-            },
-          },
-        }}
-      />
       <Parenting
         themeParam={customTheme}
         titleParam="Consiliere parentală"
@@ -484,72 +272,99 @@ const ParentingServices = () => {
           },
         ]}
       />
+    </>
+  );
+};
 
-      <Footer
+const ContactPage = () => {
+  return (
+    <>
+      <Form
         themeParam={customTheme}
-        imageParam={images[0]}
-        iconsParam={[
+        titleParam="Contactează-mă"
+        textParam="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+consectetur justo quis"
+        inputParams={[
           {
-            label: 'Twitter',
-            href: 'www.twitter.com',
-            img: '/images/Vector.png',
+            element: 'input',
+            id: 'name',
+            type: 'text',
+            placeholder: 'Your full name*',
+            errorText: 'Câmpul este obligatoriu',
           },
           {
-            label: 'Instagram',
-            href: 'www.instagram.com',
-            img: '/images/Vector (1).png',
+            element: 'input',
+            id: 'email',
+            type: 'email',
+            placeholder: 'Your email address*',
+            errorText: 'Adresa introdusă nu este validă',
           },
           {
-            label: 'Facebook',
-            href: 'www.facebook.com',
-            img: '/images/Vector (2).png',
-          },
-          {
-            label: 'LinkedIn',
-            href: 'www.linkedin.com',
-            img: '/images/Vector (3).png',
+            element: 'textarea',
+            id: 'message',
+            type: 'text',
+            placeholder: 'Write a note about your request*',
+            errorText: 'Câmpul este obligatoriu',
           },
         ]}
-        addressParam="88/89 Peter Odili Road, Port Harcourt, Rivers State"
-        linksParam={[
-          {
-            title: 'Acasă',
-            href: '/#',
+        buttonParam={{
+          item: reuseItems.button_1,
+          props: {
+            textParam: 'Trimite',
+            customStyle: {
+              backgroundColor: customTheme.colors.color_60,
+              padding: '1.5rem 0',
+              fontSize: '1.8rem',
+              fontWeight: '600',
+              borderRadius: '2rem',
+              color: customTheme.colors.color_10,
+              margin: '0',
+              width: '100%',
+            },
           },
-          {
-            title: 'Despre',
-            href: '/#despre',
-          },
-          {
-            title: 'Servicii',
-            href: '/#servicii',
-          },
+        }}
+      />
+      <Location
+        themeParam={customTheme}
+        cardParams={[
           {
             title: 'Contact',
-            href: '/contact',
+            content: [
+              {
+                icon: '/images/Vector (8).png',
+                text: 'infocezara99@gmail.com',
+              },
+              {
+                icon: '/images/Vector (10).png',
+                text: '+234 806 774 735',
+              },
+            ],
           },
           {
-            title: 'Privacy policy',
-            href: '/privacy',
+            title: 'Locație',
+            content: [
+              {
+                icon: '/images/Vector (9).png',
+                text: '88/89 Peter Odili Road, Port Harcourt, Rivers State',
+              },
+            ],
           },
         ]}
-        copyrightParam="© MindCon. All right reserved"
-        textParam="Conectează-te cu mine"
       />
     </>
   );
 };
 
-const Contact = () => {
+function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header
         themeParam={customTheme}
         logoImgParam={images[0]}
         linksParam={[
           {
             title: 'Acasă',
-            href: '/#',
+            href: '/',
           },
           {
             title: 'Despre',
@@ -580,6 +395,12 @@ const Contact = () => {
           },
         }}
       />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/coaching" element={<CoachingServices />} />
+        <Route exact path="/parenting" element={<ParentingServices />} />
+        <Route exact path="/contact" element={<ContactPage />} />
+      </Routes>
       <Footer
         themeParam={customTheme}
         imageParam={images[0]}
@@ -631,19 +452,6 @@ const Contact = () => {
         copyrightParam="© MindCon. All right reserved"
         textParam="Conectează-te cu mine"
       />
-    </>
-  );
-};
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/coaching" element={<CoachingServices />} />
-        <Route exact path="/parenting" element={<ParentingServices />} />
-        <Route exact path="/contact" element={<Contact />} />
-      </Routes>
     </BrowserRouter>
   );
 }

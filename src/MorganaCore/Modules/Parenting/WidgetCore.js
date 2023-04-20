@@ -11,19 +11,12 @@ const Parenting = ({ themeParam, titleParam, imageParam, textParams }) => {
   let text = textParams ? textParams : 'Default text';
 
   return (
-    <motion.div
-      id="acasa"
+    <div
       className="section coaching"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        default: {
-          duration: 1,
-        },
-      }}
       style={{
         backgroundColor: theme.colors.color_30,
         color: theme.colors.font_dark,
+        fontFamily: theme.fonts.content,
       }}
     >
       <div className="coaching_text">
@@ -37,13 +30,7 @@ const Parenting = ({ themeParam, titleParam, imageParam, textParams }) => {
         </h2>
 
         {text.map((text, index) => (
-          <p
-            key={index}
-            className="coaching_content"
-            style={{
-              fontFamily: theme.fonts.content,
-            }}
-          >
+          <p key={index} className="coaching_content">
             {text}
           </p>
         ))}
@@ -56,7 +43,7 @@ const Parenting = ({ themeParam, titleParam, imageParam, textParams }) => {
         />
         <img className="section_img--primary" src={image.primary} alt="" />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

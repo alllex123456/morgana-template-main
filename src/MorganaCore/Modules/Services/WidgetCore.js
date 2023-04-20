@@ -22,18 +22,12 @@ const WidgetCore = ({
   let image = imageParam ? imageParam : {};
 
   return (
-    <motion.header
+    <div
       id="servicii"
       className="section offer"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        default: {
-          duration: 1,
-        },
-      }}
       style={{
         color: theme.colors.font_dark,
+        fontFamily: theme.fonts.content,
       }}
     >
       <img className="background-image" src={image.background} alt="" />
@@ -50,20 +44,16 @@ const WidgetCore = ({
         >
           {title}
         </h3>
-        <p
-          style={{
-            fontFamily: theme.fonts.content,
-          }}
-        >
-          {text}
-        </p>
+        <p>{text}</p>
       </div>
       <div className="offer_cards">
         {cards.map((card, index) => (
           <div
             key={index}
             className="offer_cards--card"
-            style={{ background: theme.colors.color_10 }}
+            style={{
+              background: theme.colors.color_10,
+            }}
           >
             <div>
               <img
@@ -81,7 +71,7 @@ const WidgetCore = ({
           </div>
         ))}
       </div>
-    </motion.header>
+    </div>
   );
 };
 

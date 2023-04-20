@@ -11,16 +11,8 @@ const Coaching = ({ themeParam, titleParam, imageParam, textParams }) => {
   let text = textParams ? textParams : 'Default text';
 
   return (
-    <motion.div
-      id="acasa"
+    <div
       className="section coaching"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        default: {
-          duration: 1,
-        },
-      }}
       style={{
         backgroundColor: theme.colors.color_30,
         color: theme.colors.font_dark,
@@ -56,7 +48,7 @@ const Coaching = ({ themeParam, titleParam, imageParam, textParams }) => {
           </p>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

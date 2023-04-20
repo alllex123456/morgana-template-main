@@ -10,19 +10,12 @@ const WidgetCore = ({ themeParam, infoParams, buttonParam }) => {
   let button = buttonParam ? buttonParam : <DefaultButton />;
 
   return (
-    <motion.div
-      id="acasa"
+    <div
       className="section meeting"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        default: {
-          duration: 1,
-        },
-      }}
       style={{
         backgroundColor: theme.colors.color_10,
         color: theme.colors.font_dark,
+        fontFamily: theme.fonts.content,
       }}
     >
       <div className="meeting_data">
@@ -36,7 +29,7 @@ const WidgetCore = ({ themeParam, infoParams, buttonParam }) => {
       </div>
 
       <button.item {...button.props} />
-    </motion.div>
+    </div>
   );
 };
 

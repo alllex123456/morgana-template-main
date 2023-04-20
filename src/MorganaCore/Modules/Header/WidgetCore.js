@@ -44,29 +44,18 @@ export default function Header({
       },
     },
   };
-  const headerVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        default: {
-          duration: 1,
-        },
-      },
-    },
+
+  const isActive = (iHash) => {
+    return `/${location.hash}` === iHash;
   };
 
   return (
     <React.Fragment>
-      <motion.header
+      <header
         className="header_mobile"
-        variants={headerVariants}
-        initial="hidden"
-        animate="visible"
         style={{
           backgroundColor: theme.colors.color_60,
+          fontFamily: theme.fonts.content,
         }}
       >
         <DotsThreeCircle
@@ -123,11 +112,15 @@ export default function Header({
                   <NavHashLink
                     to={el.href}
                     key={index}
-                    activeStyle={{
-                      color: theme.colors.font_dark,
-                      fontWeight: 700,
-                      borderBottom: '2px solid currentColor',
-                    }}
+                    style={
+                      isActive(el.href)
+                        ? {
+                            color: theme.colors.font_dark,
+                            fontWeight: 700,
+                            borderBottom: '2px solid currentColor',
+                          }
+                        : { color: theme.colors.font_dark }
+                    }
                     onClick={() => setMobileNavOpen(false)}
                   >
                     {el.title}
@@ -137,12 +130,9 @@ export default function Header({
             </motion.nav>
           )}
         </AnimatePresence>
-      </motion.header>
-      <motion.header
+      </header>
+      <header
         className="header_desktop"
-        variants={headerVariants}
-        initial="hidden"
-        animate="visible"
         style={{
           backgroundColor: theme.colors.color_60,
         }}
@@ -170,14 +160,15 @@ export default function Header({
               <NavHashLink
                 to={el.href}
                 key={index}
-                style={{
-                  color: theme.colors.font_dark,
-                }}
-                activeStyle={{
-                  color: theme.colors.font_dark,
-                  fontWeight: 700,
-                  borderBottom: '2px solid currentColor',
-                }}
+                style={
+                  isActive(el.href)
+                    ? {
+                        color: theme.colors.font_dark,
+                        fontWeight: 700,
+                        borderBottom: '2px solid currentColor',
+                      }
+                    : { color: theme.colors.font_dark }
+                }
                 onClick={() => setMobileNavOpen(false)}
               >
                 {el.title}
@@ -185,7 +176,7 @@ export default function Header({
             );
           })}
         </nav>
-      </motion.header>
+      </header>
     </React.Fragment>
   );
 }

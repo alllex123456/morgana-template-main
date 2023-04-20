@@ -17,19 +17,13 @@ const WidgetCore = ({
   let button = buttonParam ? buttonParam : <DefaultButton />;
 
   return (
-    <motion.div
+    <div
       id="acasa"
       className="section hero"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        default: {
-          duration: 1,
-        },
-      }}
       style={{
         backgroundColor: theme.colors.color_60,
         color: theme.colors.font_dark,
+        fontFamily: theme.fonts.content,
       }}
     >
       <div className="hero_text">
@@ -41,14 +35,7 @@ const WidgetCore = ({
         >
           {title}
         </h1>
-        <p
-          className="hero_content"
-          style={{
-            fontFamily: theme.fonts.content,
-          }}
-        >
-          {text}
-        </p>
+        <p className="hero_content">{text}</p>
         <button.item {...button.props} />
       </div>
 
@@ -70,7 +57,7 @@ const WidgetCore = ({
           <p>Success</p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

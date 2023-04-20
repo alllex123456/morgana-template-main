@@ -24,19 +24,13 @@ const WidgetCore = ({
   let text = textParam ? textParam : '';
 
   return (
-    <motion.div
+    <div
       id="despre"
       className="section footer"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        default: {
-          duration: 1,
-        },
-      }}
       style={{
         color: theme.colors.color_10,
         backgroundColor: theme.colors.color_60,
+        fontFamily: theme.fonts.content,
       }}
     >
       <div className="footer_links">
@@ -45,31 +39,34 @@ const WidgetCore = ({
           <p>{address}</p>
         </div>
         <div className="footer_links--nav">
-          {links.slice(0, 2).map((link, index) => (
-            <HashLink
-              key={index}
-              to={link.href}
-              style={{
-                color: theme.colors.color_10,
-              }}
-            >
-              {link.title}
-            </HashLink>
-          ))}
+          <div>
+            {links.slice(0, 2).map((link, index) => (
+              <HashLink
+                key={index}
+                to={link.href}
+                style={{
+                  color: theme.colors.color_10,
+                }}
+              >
+                {link.title}
+              </HashLink>
+            ))}
+          </div>
+          <div>
+            {links.slice(2).map((link, index) => (
+              <HashLink
+                key={index}
+                to={link.href}
+                style={{
+                  color: theme.colors.color_10,
+                }}
+              >
+                {link.title}
+              </HashLink>
+            ))}
+          </div>
         </div>
-        <div className="footer_links--nav">
-          {links.slice(2).map((link, index) => (
-            <HashLink
-              key={index}
-              to={link.href}
-              style={{
-                color: theme.colors.color_10,
-              }}
-            >
-              {link.title}
-            </HashLink>
-          ))}
-        </div>
+
         <div className="footer_links--social">
           <p>{text}</p>
           <div className="footer_links--social_icons">
@@ -82,7 +79,7 @@ const WidgetCore = ({
         </div>
       </div>
       <p className="footer_copyright">{copyright}</p>
-    </motion.div>
+    </div>
   );
 };
 

@@ -58,6 +58,12 @@
   border-radius: 1rem;
 }
 
+@media (max-width: 81em) {
+  .offer_cards--card {
+    z-index: 1;
+  }
+}
+
 @media (max-width: 50em) {
   .offer_cards {
     padding: 0 2rem;

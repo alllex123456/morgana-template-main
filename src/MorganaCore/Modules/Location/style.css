@@ -1,0 +1,42 @@
+.location_cards {
+  max-width: 90rem;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.location_cards > * {
+  flex: 1 1 30rem;
+}
+
+.location_cards--card {
+  height: 23rem;
+  max-width: 45rem;
+  padding: 4rem 6rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 100, 0.08);
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.location_cards--card h4 {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.location_cards--card_content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.4rem;
+  font-size: 1.6rem;
+}
+
+.location_cards--card:nth-child(2) img {
+  align-self: flex-start;
+}
